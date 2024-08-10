@@ -94,11 +94,13 @@ export class AddUserComponent {
     this.dialog.closeAll();
   }
 
+  //Function responible for opening the dialog box that contains form for adding workout details
   openDialog() {
     const dialogRef = this.dialog.open(this.dialogTemplate, {
       width: '500px',
     });
 
+    
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
         this.userAdded.emit();

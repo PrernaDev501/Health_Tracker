@@ -2,9 +2,12 @@
   <button mat-flat-button (click)="openDialog()">Add Workout</button>
 </div>
 
+
 <ng-template #dialogTemplate>
+  <!-- Form for adding workout details -->
+
   <form
-    class="min-w-[150px] max-w-[500px] w-full border-2 p-8 rounded bg-white"
+    class="min-w-[150px] max-w-[500px] w-full border-2 p-8 rounded bg-red-200"
     #form="ngForm"
     (ngSubmit)="onSubmit(form)">
     <h6 mat-dialog-title>Add Workout Details</h6>

@@ -4,6 +4,11 @@ export const workoutOptions = [
   { value: 'Swimming', viewValue: 'Swimming' },
   { value: 'Running', viewValue: 'Running' },
   { value: 'Weightlifting', viewValue: 'Weightlifting' },
+  { value: 'Pilates' , viewValue : 'Pilates'},
+  { value: 'Aerobic' , viewValue : 'Aerobics'},
+  { value: 'Abs' , viewValue : 'Abs Workout'},
+
+  
 ];
 
 export interface Workout {

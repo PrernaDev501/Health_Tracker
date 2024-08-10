@@ -11,9 +11,18 @@ export class ChartService {
 
   constructor() {}
 
+  generateColors(count: number) {
+    const colors = [];
+    for (let i = 0; i < count; i++) {
+      colors.push(`rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`);
+    }
+    return colors;
+  }
+
   createChart(chartRef: HTMLCanvasElement, user: User) {
     const ctx = chartRef.getContext('2d');
     if (ctx) {
+      const workoutCount = user.workouts.length;
       this.chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -22,6 +31,9 @@ export class ChartService {
             {
               label: 'Minutes',
               data: user.workouts.map(w => w.minutes),
+              // backgroundColor: 'rgba(75, 192, 192, 0.2)', // Background color of bars
+              backgroundColor: this.generateColors(workoutCount), // Dynamic colors
+              borderColor: this.generateColors(workoutCount).map(color => color.replace('0.2', '1')), // Matching border colors
               borderWidth: 1,
             },
           ],
